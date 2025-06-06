@@ -2,9 +2,8 @@ FROM ubuntu:focal
 
 # Non-interactive installation
 ENV DEBIAN_FRONTEND=noninteractive
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-# Timezone
+# Set timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
     apt-get update && \
@@ -23,9 +22,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-rosdep \
     && rm -rf /var/lib/apt/lists/*
 
-# Add ROS Noetic repository and GPG key (modern method)
+# Add ROS Noetic GPG key and repository (modern secure method)
 RUN mkdir -p /etc/apt/keyrings && \
-    curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc -o /etc/apt/keyrings/ros-archive-keyring.gpg && \
+    curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc \
+    | gpg --dearmor -o /etc/apt/keyrings/ros-archive-keyring.gpg && \
     echo "deb [signed-by=/etc/apt/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" \
     > /etc/apt/sources.list.d/ros-latest.list
 
@@ -44,8 +44,6 @@ ENV ROS_PACKAGE_PATH=/opt/ros/noetic/share
 # Create workspace and clone Interbotix repo
 RUN mkdir -p /root/catkin_ws/src
 WORKDIR /root/catkin_ws/src
-
-# Clone Interbotix sources
 RUN git clone https://github.com/Interbotix/interbotix_ros_manipulators.git
 
 # Install ROS dependencies
