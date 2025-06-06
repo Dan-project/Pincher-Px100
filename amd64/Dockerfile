@@ -1,4 +1,6 @@
-FROM ubuntu:focal
+#FROM ubuntu:focal
+FROM --platform=linux/amd64 ubuntu:focal
+
 
 # issue with ubuntu18 and asking for inputs
 ENV DEBIAN_FRONTEND=noninteractive
