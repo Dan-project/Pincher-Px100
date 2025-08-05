@@ -43,7 +43,7 @@ Téléchargez ceci : `ubuntu-20.04.5-live-server-arm64.iso`
     sudo apt install xterm
     ```
 
-    Problème avec 'sudo' : Par défaut, VirtualBox met votre compte utilisateur `vboxuser` (nom par défaut) dans la liste des sudoers. Si ce n'est pas le cas, suivez les instructions sur 'ajouter-utilisateur-sudo.md'.
+    Problème avec 'sudo' : Par défaut, VirtualBox met votre compte utilisateur `vboxuser` (nom par défaut) dans la liste des sudoers. Si ce n'est pas le cas, suivez les instructions sur [ajouter-utilisateur-sudo.md](./ajouter-utilisateur-sudo.md').
 
 3. Configuration de VirtualBox : Il faut impérativement donner l'accès aux ports USB à VirtualBox pour que les USB soient reconnus dans la VM. Branchez le robot sur votre ordinateur, allez dans les paramètres de VirtualBox puis cliquez sur 'ajouter un nouveau filtre USB'.  
 
