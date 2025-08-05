@@ -47,7 +47,7 @@ Téléchargez ceci : `ubuntu-20.04.5-live-server-arm64.iso`
 
 3. Configuration de VirtualBox : Il faut impérativement donner l'accès aux ports USB à VirtualBox pour que les USB soient reconnus dans la VM. Branchez le robot sur votre ordinateur, allez dans les paramètres de VirtualBox puis cliquez sur 'ajouter un nouveau filtre USB'.  
 
-    <img src="usb.png" alt="Accès au port USB" width="600" />
+    <img src="Images/usb.png" alt="Accès au port USB" width="600" />
 
     Jetez un coup d'œil aux droits et accès qu'a l'application VirtualBox sur votre ordinateur et autorisez ce qui pourrait compromettre l'accès USB (Sécurité et Confidentialité sur MacOS).
 
@@ -63,7 +63,7 @@ Téléchargez ceci : `ubuntu-20.04.5-live-server-arm64.iso`
     bash ./xsarm_amd64_install.sh -d galactic
     ```
 
-    <img src="installation_interbotix.png" alt="install" width="600" />
+    <img src="Images/installation_interbotix.png" alt="install" width="600" />
 
 2. Architecture AArch64 (ARM64) :
     ```bash
@@ -73,7 +73,7 @@ Téléchargez ceci : `ubuntu-20.04.5-live-server-arm64.iso`
     bash ./xsarm_rpi4_install.sh -d galactic 
     ```
     
-    <img src="installation_interbotix2.png" alt="install" width="600" />
+    <img src="Images/installation_interbotix2.png" alt="install" width="600" />
 
 ---
 
